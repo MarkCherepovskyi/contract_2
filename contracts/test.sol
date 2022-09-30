@@ -12,6 +12,7 @@ contract Test is IDataStructurePractice, Ownable  {
     function setNewUser(address _userAdr, User calldata _newUser) external onlyOwner(){
         users[_userAdr] = _newUser;
     }
+    
 
     function getUser(address _user) external view returns(User memory){
         return users[_user];
@@ -20,5 +21,6 @@ contract Test is IDataStructurePractice, Ownable  {
     function getMyInfo() external view returns(User memory){
         return users[msg.sender];
     }
+
 
 }
